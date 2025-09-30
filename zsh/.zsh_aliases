@@ -1,0 +1,64 @@
+# Additional ZSH Aliases
+# Development aliases
+alias py='python3'
+alias ipy='ipython'
+alias jn='jupyter notebook'
+alias jl='jupyter lab'
+
+# System monitoring
+alias top='htop'
+alias df='df -h'
+alias du='du -h'
+alias free='free -h'
+alias ps='ps aux'
+
+# Network
+alias ping='ping -c 5'
+alias ports='netstat -tulanp'
+alias myip='curl -s ipinfo.io/ip'
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+
+# File operations
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias mkdir='mkdir -pv'
+alias chmod='chmod -v'
+alias chown='chown -v'
+
+# Search and find
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+alias grep='grep --color=auto --exclude-dir={.git,.svn}'
+
+# Archive and compression
+alias tgz='tar -czf'
+alias tgzx='tar -xzf'
+alias tbz='tar -cjf'
+alias tbzx='tar -xjf'
+
+# Development tools
+alias serve='python3 -m http.server'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
+
+# Git workflow aliases
+alias glog='git log --oneline --graph --decorate --all'
+alias glogp='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias gwip='git add -A && git commit -m "WIP"'
+alias gunwip='git reset HEAD~1'
+alias gclean='git clean -fd'
+alias greset='git reset --hard HEAD'
+alias gundo='git reset --soft HEAD~1'
+
+# Tmux aliases
+alias ta='tmux attach'
+alias tl='tmux list-sessions'
+alias tn='tmux new-session'
+alias tk='tmux kill-session'
+
+# Quick edits
+alias ezsh='$EDITOR ~/.zshrc'
+alias evim='$EDITOR ~/.config/nvim/init.lua'
+alias etmux='$EDITOR ~/.tmux.conf'
+alias reload='source ~/.zshrc'
